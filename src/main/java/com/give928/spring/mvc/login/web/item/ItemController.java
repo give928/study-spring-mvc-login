@@ -45,7 +45,6 @@ public class ItemController {
 
     @PostMapping("/add")
     public String addItem(@Validated @ModelAttribute("item") ItemSaveForm form, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
-
         //특정 필드 예외가 아닌 전체 예외
         if (form.getPrice() != null && form.getQuantity() != null) {
             int resultPrice = form.getPrice() * form.getQuantity();
